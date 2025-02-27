@@ -55,10 +55,5 @@ postcss
 
 ### 
 
-## 算法
+## [算法]({{site.url}}/interview/program)
 
-刷题
-
-easy: 0 / 30
-medium: 0 / 20
-hard: 0 / 10
