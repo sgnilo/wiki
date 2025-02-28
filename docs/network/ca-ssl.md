@@ -1,3 +1,8 @@
+---
+categories: [网络]
+tags: [SSL, CA, certbot, nginx]
+---
+
 # 通过 Let's Encrypt 申请根CA提供验证的 SSL 证书
 
 - 常用的云服务商（腾讯云、阿里云提供的）免费证书有效期短（90天），申请麻烦，还有限额，限额用完就没招了
