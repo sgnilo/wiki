@@ -11,3 +11,294 @@ pre {
         background: transparent;
   }
 }
+
+@codeColor1: #999988;
+@codeColor2: #999999;
+@codeColor3: #a61717;
+@codeColor4: #e3d2d2;
+@codeColor5: #000000;
+@codeColor6: #ffdddd;
+@codeColor7: #aa0000;
+@codeColor8: #ddffdd;
+@codeColor9: #888888;
+@codeColor10: #555555;
+@codeColor11: #aaaaaa;
+@codeColor12: #009999;
+@codeColor13: #445588;
+@codeColor14: #d14;
+@codeColor15: #008080;
+@codeColor16: #990073;
+@codeColor17: #800080;
+@codeColor18: #990000;
+@codeColor19: #000080;
+@codeColor20: #009926;
+@codeColor21: #bbbbbb;
+@codeColor22: #3c5d5d;
+@codeColor23: #0086B3;
+
+.highlight {
+    .cm {
+        color: @codeColor1;
+        font-style: italic
+    }
+    
+    .cp {
+        color: @codeColor2;
+        font-weight: bold
+    }
+    
+    .c1 {
+        color: @codeColor1;
+        font-style: italic
+    }
+    
+    .cs {
+        color: @codeColor2;
+        font-weight: bold;
+        font-style: italic
+    }
+    
+    .c,.cd {
+        color: @codeColor1;
+        font-style: italic
+    }
+    
+    .err {
+        color: @codeColor3;
+        background-color: @codeColor4
+    }
+    
+    .gd {
+        color: @codeColor5;
+        background-color: @codeColor6
+    }
+    
+    .ge {
+        color: @codeColor5;
+        font-style: italic
+    }
+    
+    .gr {
+        color: @codeColor7
+    }
+    
+    .gh {
+        color: @codeColor2
+    }
+    
+    .gi {
+        color: @codeColor5;
+        background-color: @codeColor8
+    }
+    
+    .go {
+        color: @codeColor9
+    }
+    
+    .gp {
+        color: @codeColor10
+    }
+    
+    .gs {
+        font-weight: bold
+    }
+    
+    .gu {
+        color: @codeColor11
+    }
+    
+    .gt {
+        color: @codeColor7
+    }
+    
+    .kc {
+        color: @codeColor5;
+        font-weight: bold
+    }
+    
+    .kd {
+        color: @codeColor5;
+        font-weight: bold
+    }
+    
+    .kn {
+        color: @codeColor5;
+        font-weight: bold
+    }
+    
+    .kp {
+        color: @codeColor5;
+        font-weight: bold
+    }
+    
+    .kr {
+        color: @codeColor5;
+        font-weight: bold
+    }
+    
+    .kt {
+        color: @codeColor13;
+        font-weight: bold
+    }
+    
+    .k,.kv {
+        color: @codeColor5;
+        font-weight: bold
+    }
+    
+    .mf {
+        color: @codeColor12
+    }
+    
+    .mh {
+        color: @codeColor12
+    }
+    
+    .il {
+        color: @codeColor12
+    }
+    
+    .mi {
+        color: @codeColor12
+    }
+    
+    .mo {
+        color: @codeColor12
+    }
+    
+    .m,.mb,.mx {
+        color: @codeColor12
+    }
+    
+    .sb {
+        color: @codeColor14
+    }
+    
+    .sc {
+        color: @codeColor14
+    }
+    
+    .sd {
+        color: @codeColor14
+    }
+    
+    .s2 {
+        color: @codeColor14
+    }
+    
+    .se {
+        color: @codeColor14
+    }
+    
+    .sh {
+        color: @codeColor14
+    }
+    
+    .si {
+        color: @codeColor14
+    }
+    
+    .sx {
+        color: @codeColor14
+    }
+    
+    .sr {
+        color: @codeColor20
+    }
+    
+    .s1 {
+        color: @codeColor14
+    }
+    
+    .ss {
+        color: @codeColor16
+    }
+    
+    .s {
+        color: @codeColor14
+    }
+    
+    .na {
+        color: @codeColor15
+    }
+    
+    .bp {
+        color: @codeColor2
+    }
+    
+    .nb {
+        color: @codeColor23
+    }
+    
+    .nc {
+        color: @codeColor13;
+        font-weight: bold
+    }
+    
+    .no {
+        color: @codeColor15
+    }
+    
+    .nd {
+        color: @codeColor22;
+        font-weight: bold
+    }
+    
+    .ni {
+        color: @codeColor17
+    }
+    
+    .ne {
+        color: @codeColor18;
+        font-weight: bold
+    }
+    
+    .nf {
+        color: @codeColor18;
+        font-weight: bold
+    }
+    
+    .nl {
+        color: @codeColor18;
+        font-weight: bold
+    }
+    
+    .nn {
+        color: @codeColor10
+    }
+    
+    .nt {
+        color: @codeColor19
+    }
+    
+    .vc {
+        color: @codeColor15
+    }
+    
+    .vg {
+        color: @codeColor15
+    }
+    
+    .vi {
+        color: @codeColor15
+    }
+    
+    .nv {
+        color: @codeColor15
+    }
+    
+    .ow {
+        color: @codeColor5;
+        font-weight: bold
+    }
+    
+    .o {
+        color: @codeColor5;
+        font-weight: bold
+    }
+    
+    .w {
+        color: @codeColor21
+    }
+}
+
