@@ -4,21 +4,21 @@
 
 header {
     background-color: #1B4D3E;
+    background-image: none;
 }
 
 pre {
-    background-color: #497D74;
-    border-radius: 15px;
-    .code {
+    code {
+        color: #FF9D23;
         background: transparent;
   }
 }
 
-$codeColor1: #999988;
+$codeColor1: #bbb;
 $codeColor2: #999999;
 $codeColor3: #a61717;
 $codeColor4: #e3d2d2;
-$codeColor5: #000000;
+$codeColor5: #443627;
 $codeColor6: #ffdddd;
 $codeColor7: #aa0000;
 $codeColor8: #ddffdd;
@@ -27,18 +27,20 @@ $codeColor10: #555555;
 $codeColor11: #aaaaaa;
 $codeColor12: #009999;
 $codeColor13: #445588;
-$codeColor14: #d14;
+$codeColor14: #A9B5DF;
 $codeColor15: #008080;
 $codeColor16: #990073;
 $codeColor17: #800080;
 $codeColor18: #990000;
-$codeColor19: #000080;
+$codeColor19: #F4D793;
 $codeColor20: #009926;
 $codeColor21: #bbbbbb;
 $codeColor22: #3c5d5d;
-$codeColor23: #0086B3;
+$codeColor23: #FEF9E1;
 
 .highlight {
+    background-color: #497D74;
+    border-radius: 15px;
     .cm {
         color: $codeColor1;
         font-style: italic
