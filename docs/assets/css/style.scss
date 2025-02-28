@@ -1,6 +1,7 @@
 ---
 ---
 @import "{{ site.theme }}";
+@import "./custom-element.scss"
 
 header {
     background-color: #1B4D3E;
