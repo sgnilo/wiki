@@ -1,4 +1,4 @@
-# To see behind walls, To draw closer.
+# Overview
 
 pages: {{site.html_pages}}
 static_files: {{site.static_files}}
