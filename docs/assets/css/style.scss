@@ -1,0 +1,13 @@
+@import "{{ site.theme }}";
+
+header {
+    background-color: #1B4D3E;
+}
+
+pre {
+    background-color: #497D74;
+    border-radius: 15px;
+    .code {
+        background: transparent;
+  }
+}
