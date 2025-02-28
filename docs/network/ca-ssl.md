@@ -4,30 +4,28 @@
 - 一年期的证书花钱买很贵，支持通配符域名的一年约2K左右。
 - 自签名证书浏览器、手机不认，除非手动安装自签名CA证书，这几乎相当于无法在生产环境中使用
 
-  well，那么[Let's Encrypt](https://letsencrypt.org/getting-started/) 是个不错的选择，可提供：
-  - 90天的通配符域名免费验证发放
-  - 脚本化的申请体验（即可提供自动化申请部署，方便省心）
+well，那么[Let's Encrypt](https://letsencrypt.org/getting-started/) 是个不错的选择，可提供：
+- 90天的通配符域名免费验证发放
+- 脚本化的申请体验（即可提供自动化申请部署，方便省心）
 
-  ## Lets Encrypt 通过 [ACME](https://zh.wikipedia.org/wiki/%E8%87%AA%E5%8B%95%E6%86%91%E8%AD%89%E6%9B%B4%E6%96%B0%E7%92%B0%E5%A2%83) 协议申请部署
+## Lets Encrypt 通过 [ACME](https://zh.wikipedia.org/wiki/%E8%87%AA%E5%8B%95%E6%86%91%E8%AD%89%E6%9B%B4%E6%96%B0%E7%92%B0%E5%A2%83) 协议申请部署
 
-  ### Step1 选择一个合适的 ACME client
-  
-  这里由于我们的环境里有anaconda，那就直接用 python 版本的 certBot。附上其他的 [client 列表](https://letsencrypt.org/docs/client-options/)。
+### Step1 选择一个合适的 ACME client
 
-  ### 安装 [certBot](https://certbot.eff.org/instructions?ws=nginx&os=pip)
-  
-  要求 python3 环境
+这里由于我们的环境里有anaconda，那就直接用 python 版本的 certBot。附上其他的 [client 列表](https://letsencrypt.org/docs/client-options/)。
 
-  首先安装依赖
-  
-  ```sh
-  yum install augeas-libs # dnf install augeas-libs 也可
-  ```
+### 安装 [certBot](https://certbot.eff.org/instructions?ws=nginx&os=pip)
 
-  然后删掉系统中可能存在的旧的 certBot
-  ```sh
-  sudo yum remove certbot
-  ```
+首先安装依赖，要求 python3 环境
+
+```sh
+yum install augeas-libs # dnf install augeas-libs 也可
+```
+
+然后删掉系统中可能存在的旧的 certBot
+```sh
+sudo yum remove certbot
+```
 创建一个python虚拟执行环境
 
 ```sh
@@ -43,13 +41,27 @@ pip install certbot certbot-nginx
 ```sh
 ln -s /home/work/anaconda/bin/certbot /usr/bin/certbot
 ```
-
+### 生成证书
 尝试使用certbot生成证书
 ```sh
 certbot certonly --nginx # 仅生成证书
 ```
-<img width="569" alt="image" src="https://github.com/user-attachments/assets/e82cecd0-9d0e-4ec7-83d7-39ed8bc5fefd" />
 
+或者，直接使用certbot去生成证书并部署（自动修改nginx配置）
+```sh
+certbot --nginx # 生成证书并部署
+nginx -s reload # 重启nginx
+```
+
+检查浏览器访问，此时应该可以发现 https 已经生效
+
+### 自动到期更新
+
+当3个月有效期过了的时候，需要重新申请证书。certbot提供了自动去到期申请新的证书的功能
+
+```sh
+echo "0 0,12 * * * root python -c 'import random; import time; time.sleep(random.random() * 3600)' && sudo certbot renew -q" | tee -a /etc/crontab > /dev/null
+```
 
 
 
