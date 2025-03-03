@@ -41,13 +41,15 @@ postcss
     - max-age，值是一个相对时间，单位是秒，表示当从此刻起，再过多长时间资源缓存过期。在此之前无需请求直接使用缓存。
     - no-store，禁止缓存，每次访问资源都重新请求全新的当前资源
     - public，公共缓存，表示该资源可以被网络请求的整个链路中，所有其他方比如cdn等缓存
-    - private，私有缓存，表示该资源只可以被浏览器缓存，不可以被cdn之类的其他房缓存
+    - private，私有缓存，表示该资源只可以被浏览器缓存，不可以被cdn之类的其他方缓存
     - no-cache，表示不直接使用缓存，带上其他协商缓存使用的header信息再次发送请求确认
 
-协商缓存：浏览器发送请求，其header中包含如 etag/if-non-match 或 lastModified/if-modified-since信息，服务端通过比较：
-- etag是否一致、if-non-match
-- lastModified是否仍然有效
-- if-modified-since
+协商缓存：浏览器发送请求，其header中包含如 if-modified-since/if-non-match 来自第一次请求时带上的 last-modifiy/etag 信息，服务端通过比较：
+- if-non-match 与 etag是否一致，带有etag的响应，根据内容计算得出，md5值，缓存会被浏览器写入硬盘 cache from disk，其他的是 cache from memory.http 1.1协议
+- if-modified-since 与 last-Modifiy 是否一致,标识该资源的最后修改时间
+如果命中协商缓存，则返回304
+
+etag 跟内容强相关，精度更高，更准确，因此优先比对etag，一致再比对last-modify
 
 ## Nodejs
 
