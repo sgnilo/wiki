@@ -1,5 +1,5 @@
 1. 实现一个发布订阅 class EventListener，具备emit、on以及返回一个取消订阅的函数
-```javascript
+```
 const events = new EventListener();
 
 const offSum = event.on('receive', (a, b) => {
