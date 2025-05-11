@@ -16,3 +16,14 @@ Run
 turf
 
 npm install @turf/turf
+
+
+   docker pull osrm/osrm-backend
+
+   docker run -t -v $(pwd):/data osrm/osrm-backend osrm-extract -p /data/car.lua /data/beijing-latest.osm.pbf
+
+   docker run -t -v $(pwd):/data osrm/osrm-backend osrm-partition /data/beijing-latest.osrm
+
+   docker run -t -v $(pwd):/data osrm/osrm-backend osrm-customize /data/beijing-latest.osrm
+
+   docker run -t -i -p 5001:5000 -v $(pwd):/data osrm/osrm-backend osrm-routed --algorithm mld /data/beijing-latest.osrm
